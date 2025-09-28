@@ -1,0 +1,22 @@
+{
+    "name": "secvisio/laravel-rabbitmq-api-wrapper",
+    "description": "A simple API wrapper for RabbitMq Management API",
+    "type": "library",
+    "require": {
+        "ext-http": "*",
+        "guzzlehttp/guzzle": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Secvisio\\LaravelRabbitmqApiWrapper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carsten Lorenz",
+            "email": "lorenz@secvisio.io"
+        }
+    ],
+    "minimum-stability": "dev"
+}
