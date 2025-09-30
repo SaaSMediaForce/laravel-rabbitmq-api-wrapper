@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Nodes;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
 use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Nodes
@@ -29,12 +29,14 @@ class Nodes
      */
     public function __construct(
         protected PendingRequest $http,
-        protected bool $fullResponse = false
-    ) {}
+        protected bool           $fullResponse = false
+    )
+    {
+    }
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -44,20 +46,20 @@ class Nodes
     /**
      * @param string $onNode
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function node(string $onNode): object|array|string
     {
-        return $this->request('GET', 'nodes/'.$onNode, []);
+        return $this->request('GET', 'nodes/' . $onNode, []);
     }
 
     /**
      * @param string $onNode
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function nodeMemory(string $onNode): object|array|string
     {
-        return $this->request('GET', 'nodes/'.$onNode.'/memory', []);
+        return $this->request('GET', 'nodes/' . $onNode . '/memory', []);
     }
 }

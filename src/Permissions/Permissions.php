@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Permissions;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Permissions
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -45,7 +46,7 @@ class Permissions
      * @param string $onHost
      * @param string $user
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function permission(string $onHost, string $user): object|array|string
     {
@@ -57,7 +58,7 @@ class Permissions
      * @param string $user
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function setPermission(string $onHost, string $user, array $parameter): object|array|string
     {
@@ -70,7 +71,7 @@ class Permissions
      * @param string $onHost
      * @param string $user
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function deletePermission(string $onHost, string $user): object|array|string
     {

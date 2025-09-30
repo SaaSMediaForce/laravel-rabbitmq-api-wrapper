@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Channels;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Channels
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -44,7 +45,7 @@ class Channels
     /**
      * @param string $channelName
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function channel(string $channelName): object|array|string
     {

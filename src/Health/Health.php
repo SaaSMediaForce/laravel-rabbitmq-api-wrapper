@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Health;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Health
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function clusterHasAlarms(): object|array|string
     {
@@ -43,7 +44,7 @@ class Health
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function serverHasAlarms(): object|array|string
     {
@@ -54,7 +55,7 @@ class Health
      * @param int $unitCount
      * @param string $unit // Valid units: days, weeks, months, years
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function listenerHasExpiredCertificate(int $unitCount, string $unit): object|array|string
     {
@@ -64,7 +65,7 @@ class Health
     /**
      * @param int $port
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function portHasActiveListener(int $port): object|array|string
     {
@@ -74,7 +75,7 @@ class Health
     /**
      * @param string $protocol // Valid protocol names are: amqp091, amqp10, mqtt, stomp, web-mqtt, web-stomp
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function protocolHasActiveListener(string $protocol): object|array|string
     {
@@ -83,7 +84,7 @@ class Health
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function vhostsAreRunning(): object|array|string
     {
@@ -92,7 +93,7 @@ class Health
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function classicQueuesInSync(): object|array|string
     {
@@ -101,7 +102,7 @@ class Health
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function quorumQueuesInSync(): object|array|string
     {

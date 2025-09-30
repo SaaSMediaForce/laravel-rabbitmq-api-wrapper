@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Queues;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
 use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Queues
@@ -32,13 +32,15 @@ class Queues
      */
     public function __construct(
         protected PendingRequest $http,
-        protected bool $fullResponse = false
-    ) {}
+        protected bool           $fullResponse = false
+    )
+    {
+    }
 
     /**
      * @param bool $detailed
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(bool $detailed = false): object|array|string
     {
@@ -48,7 +50,7 @@ class Queues
     /**
      * @param bool $detailed
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function allDetailed(bool $detailed = false): object|array|string
     {
@@ -59,11 +61,11 @@ class Queues
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function queues(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'queues/'.$onVhost, $parameter);
+        return $this->request('GET', 'queues/' . $onVhost, $parameter);
     }
 
     /**
@@ -71,11 +73,11 @@ class Queues
      * @param string $queue
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function queue(string $onVhost, string $queue, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'queues/'.$onVhost.'/'.$queue, $parameter);
+        return $this->request('GET', 'queues/' . $onVhost . '/' . $queue, $parameter);
     }
 
     /**
@@ -83,10 +85,10 @@ class Queues
      * @param string $queue
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function bindings(string $onVhost, string $queue, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'queues/'.$onVhost.'/'.$queue.'/bindings', $parameter);
+        return $this->request('GET', 'queues/' . $onVhost . '/' . $queue . '/bindings', $parameter);
     }
 }

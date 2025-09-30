@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Exchanges;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Exchanges
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -44,7 +45,7 @@ class Exchanges
     /**
      * @param string $onVhost
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function exchanges(string $onVhost): object|array|string
     {
@@ -54,7 +55,7 @@ class Exchanges
     /**
      * @param string $onVhost
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function sourceBindings(string $onVhost, string $name): object|array|string
     {
@@ -65,7 +66,7 @@ class Exchanges
      * @param string $onVhost
      * @param string $name
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function destinationBindings(string $onVhost, string $name): object|array|string
     {

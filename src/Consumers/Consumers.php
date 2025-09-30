@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Consumers;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Consumers
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -44,7 +45,7 @@ class Consumers
     /**
      * @param string $vhost
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function consumers(string $vhost): object|array|string
     {

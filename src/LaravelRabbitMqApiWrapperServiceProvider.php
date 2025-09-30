@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Secvisio\LaravelRabbitmqApiWrapper;
 
 use Illuminate\Support\ServiceProvider;
+
 class LaravelRabbitMqApiWrapperServiceProvider extends ServiceProvider
 {
     public function register(): void

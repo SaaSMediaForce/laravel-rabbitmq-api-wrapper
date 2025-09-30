@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Vhosts;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
@@ -32,12 +33,14 @@ class Vhosts
      */
     public function __construct(
         protected PendingRequest $http,
-        protected bool $fullResponse = false
-    ) {}
+        protected bool           $fullResponse = false
+    )
+    {
+    }
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -48,55 +51,55 @@ class Vhosts
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function connections(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'vhosts/'.$onVhost.'/connections', $parameter);
+        return $this->request('GET', 'vhosts/' . $onVhost . '/connections', $parameter);
     }
 
     /**
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function channels(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'vhosts/'.$onVhost.'/channels', $parameter);
+        return $this->request('GET', 'vhosts/' . $onVhost . '/channels', $parameter);
     }
 
     /**
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function vhost(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'vhosts/'.$onVhost, $parameter);
+        return $this->request('GET', 'vhosts/' . $onVhost, $parameter);
     }
 
     /**
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function permissions(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'vhosts/'.$onVhost.'/permissions', $parameter);
+        return $this->request('GET', 'vhosts/' . $onVhost . '/permissions', $parameter);
     }
 
     /**
      * @param string $onVhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function topicPermissions(string $onVhost, array $parameter = []): object|array|string
     {
-        return $this->request('GET', 'vhosts/'.$onVhost.'/topic-permissions', $parameter);
+        return $this->request('GET', 'vhosts/' . $onVhost . '/topic-permissions', $parameter);
     }
 
     /**
@@ -106,7 +109,7 @@ class Vhosts
      */
     public function add(string $newVhostName, array $parameter = []): object|array|string
     {
-        return $this->request('PUT', 'vhosts/'.$newVhostName, $parameter);
+        return $this->request('PUT', 'vhosts/' . $newVhostName, $parameter);
     }
 
     /**
@@ -120,11 +123,11 @@ class Vhosts
      * @param string $vhost
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function delete(string $vhost, array $parameter = []): object|array|string
     {
-        return $this->request('DELETE', 'vhosts/'.$vhost, $parameter);
+        return $this->request('DELETE', 'vhosts/' . $vhost, $parameter);
     }
 
     /**
@@ -132,10 +135,10 @@ class Vhosts
      * @param string $node
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function start(string $onVhost, string $node, array $parameter = []): object|array|string
     {
-        return $this->request('POST', 'vhosts/'.$onVhost, $parameter);
+        return $this->request('POST', 'vhosts/' . $onVhost, $parameter);
     }
 }

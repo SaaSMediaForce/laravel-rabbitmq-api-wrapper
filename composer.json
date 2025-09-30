@@ -3,7 +3,6 @@
     "description": "A simple API wrapper for RabbitMq Management API",
     "type": "library",
     "require": {
-        "ext-http": "*",
         "guzzlehttp/guzzle": "*"
     },
     "license": "MIT",

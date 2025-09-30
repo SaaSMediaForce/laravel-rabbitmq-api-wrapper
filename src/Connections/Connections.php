@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper\Connections;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
@@ -34,7 +35,7 @@ class Connections
 
     /**
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function all(): object|array|string
     {
@@ -44,7 +45,7 @@ class Connections
     /**
      * @param string $connectionName
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function connection(string $connectionName): object|array|string
     {
@@ -55,7 +56,7 @@ class Connections
      * @param string $connectionName
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function deleteConnection(string $connectionName, array $parameter = []): object|array|string
     {
@@ -68,7 +69,7 @@ class Connections
     /**
      * @param string $userName
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function userConnections(string $userName): object|array|string
     {
@@ -79,7 +80,7 @@ class Connections
      * @param string $userName
      * @param array $parameter
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function deleteUserConnections(string $userName, array $parameter = []): object|array|string
     {
@@ -92,7 +93,7 @@ class Connections
     /**
      * @param string $connectionName
      * @return object|array|string
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function channels(string $connectionName): object|array|string
     {

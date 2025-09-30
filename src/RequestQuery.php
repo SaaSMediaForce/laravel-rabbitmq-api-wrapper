@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace Secvisio\LaravelRabbitmqApiWrapper;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
+use InvalidArgumentException;
 use Secvisio\LaravelRabbitmqApiWrapper\Traits\HasJsonResponse;
 
 class RequestQuery
@@ -36,7 +38,7 @@ class RequestQuery
      * @param int|null $page
      * @param int|null $pageSize
      * @return mixed
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function paginate(int $page = null, int $pageSize = null): mixed
     {
@@ -51,7 +53,7 @@ class RequestQuery
             'POST'   => $this->http->post($this->apiUri, $this->parameter),
             'PUT'    => $this->http->put($this->apiUri, $this->parameter),
             'DELETE' => $this->http->delete($this->apiUri, $this->parameter),
-            default  => throw new \InvalidArgumentException("Unsupported request type: {$this->requestType}"),
+            default  => throw new InvalidArgumentException("Unsupported request type: {$this->requestType}"),
         };
 
         if ($response->failed()) {
@@ -81,7 +83,7 @@ class RequestQuery
 
     /**
      * @return mixed
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function toJson(): mixed
     {
@@ -90,7 +92,7 @@ class RequestQuery
 
     /**
      * @return array
-     * @throws \Illuminate\Http\Client\ConnectionException
+     * @throws ConnectionException
      */
     public function toArray(): array
     {
