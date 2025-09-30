@@ -1,5 +1,5 @@
 {
-    "name": "secvisio/laravel-rabbitmq-api-wrapper",
+    "name": "saasmediaforce/laravel-rabbitmq-api-wrapper",
     "description": "A simple API wrapper for RabbitMq Management API",
     "type": "library",
     "require": {
@@ -8,13 +8,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Secvisio\\LaravelRabbitmqApiWrapper\\": "src/"
+            "SaasMediaForce\\LaravelRabbitmqApiWrapper\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Carsten Lorenz",
-            "email": "lorenz@secvisio.io"
+            "email": "info@saasmediaforce.com"
         }
     ],
     "minimum-stability": "dev"

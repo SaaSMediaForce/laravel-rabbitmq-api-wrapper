@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Traits;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Traits;
 
 use Illuminate\Http\JsonResponse;
 

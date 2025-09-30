@@ -1,9 +1,9 @@
 <?php
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Traits;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Traits;
 
 use Illuminate\Http\Client\ConnectionException;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\RequestQuery;
 
 trait RabbitmqApiRequest
 {

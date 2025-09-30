@@ -1,13 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Exchanges;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Exchanges;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
-use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Exchanges
 {

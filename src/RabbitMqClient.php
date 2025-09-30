@@ -1,23 +1,23 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper;
 
 use Illuminate\Http\Client\Factory;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
-use Secvisio\LaravelRabbitmqApiWrapper\Bindings\Bindings;
-use Secvisio\LaravelRabbitmqApiWrapper\Channels\Channels;
-use Secvisio\LaravelRabbitmqApiWrapper\Connections\Connections;
-use Secvisio\LaravelRabbitmqApiWrapper\Consumers\Consumers;
-use Secvisio\LaravelRabbitmqApiWrapper\Exchanges\Exchanges;
-use Secvisio\LaravelRabbitmqApiWrapper\Health\Health;
-use Secvisio\LaravelRabbitmqApiWrapper\Nodes\Nodes;
-use Secvisio\LaravelRabbitmqApiWrapper\Permissions\Permissions;
-use Secvisio\LaravelRabbitmqApiWrapper\Queues\Queues;
-use Secvisio\LaravelRabbitmqApiWrapper\Servers\Servers;
-use Secvisio\LaravelRabbitmqApiWrapper\Users\Users;
-use Secvisio\LaravelRabbitmqApiWrapper\Vhosts\Vhosts;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Bindings\Bindings;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Channels\Channels;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Connections\Connections;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Consumers\Consumers;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Exchanges\Exchanges;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Health\Health;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Nodes\Nodes;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Permissions\Permissions;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Queues\Queues;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Servers\Servers;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Users\Users;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Vhosts\Vhosts;
 
 class RabbitMqClient
 {

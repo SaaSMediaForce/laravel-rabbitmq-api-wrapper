@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Users;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Users;
 
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
-use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Users
 {

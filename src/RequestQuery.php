@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 use InvalidArgumentException;
-use Secvisio\LaravelRabbitmqApiWrapper\Traits\HasJsonResponse;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Traits\HasJsonResponse;
 
 class RequestQuery
 {

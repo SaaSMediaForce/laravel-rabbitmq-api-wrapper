@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Queues;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Queues;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Queues
 {

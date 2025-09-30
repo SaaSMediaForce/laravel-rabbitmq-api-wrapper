@@ -1,13 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Secvisio\LaravelRabbitmqApiWrapper\Channels;
+namespace SaasMediaForce\LaravelRabbitmqApiWrapper\Channels;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
-use Secvisio\LaravelRabbitmqApiWrapper\RequestQuery;
-use Secvisio\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
+use SaasMediaForce\LaravelRabbitmqApiWrapper\Traits\RabbitmqApiRequest;
 
 class Channels
 {
